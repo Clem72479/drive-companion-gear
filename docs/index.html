@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>AutoGear Pro | Premium Car Equipment</title>
+    <meta
+      name="description"
+      content="AutoGear Pro offers premium car equipment and accessories designed to fit most private cars—simple upgrades, cleaner interiors, and safer driving."
+    />
+    <link rel="canonical" href="./" />
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:title" content="AutoGear Pro | Premium Car Equipment" />
+    <meta
+      property="og:description"
+      content="Premium car equipment and accessories designed to fit most private cars."
+    />
+    <meta property="og:type" content="website" />
+
+    <style>
+      :root {
+        --bg: 12 12% 6%;
+        --card: 12 12% 9%;
+        --text: 0 0% 98%;
+        --muted: 0 0% 72%;
+        --border: 0 0% 100% / 0.10;
+        --accent: 38 92% 54%;
+        --accent2: 18 92% 52%;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: hsl(var(--text));
+        background: radial-gradient(1200px 700px at 18% 22%, hsl(var(--accent) / 0.18), transparent 55%),
+                    radial-gradient(900px 650px at 75% 30%, hsl(var(--accent2) / 0.16), transparent 50%),
+                    hsl(var(--bg));
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 28px 20px 64px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 12px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+
+      .badge {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent2)));
+        box-shadow: 0 16px 40px hsl(var(--accent) / 0.18);
+      }
+
+      .badge svg {
+        width: 22px;
+        height: 22px;
+        filter: drop-shadow(0 8px 14px hsl(var(--bg) / 0.6));
+        animation: floaty 4.2s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      @keyframes floaty {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+
+      nav {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        color: hsl(var(--muted));
+        font-size: 14px;
+      }
+
+      nav a {
+        padding: 8px 10px;
+        border-radius: 10px;
+        transition: background 160ms ease, color 160ms ease;
+      }
+
+      nav a:hover {
+        color: hsl(var(--text));
+        background: hsl(var(--text) / 0.06);
+      }
+
+      main {
+        padding-top: 34px;
+      }
+
+      .hero {
+        position: relative;
+        border-radius: 24px;
+        border: 1px solid hsl(var(--border));
+        background:
+          linear-gradient(180deg, hsl(var(--text) / 0.06), transparent 55%),
+          radial-gradient(900px 520px at 70% 38%, hsl(var(--accent) / 0.18), transparent 55%),
+          hsl(var(--card));
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: -120px -80px auto auto;
+        width: 520px;
+        height: 520px;
+        background: conic-gradient(from 250deg, hsl(var(--accent) / 0.7), transparent 35%, hsl(var(--accent2) / 0.55));
+        filter: blur(50px);
+        opacity: 0.35;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 28px;
+        padding: 44px;
+        align-items: center;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(34px, 5.2vw, 58px);
+        line-height: 1.03;
+        letter-spacing: -0.02em;
+      }
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid hsl(var(--border));
+        background: hsl(var(--text) / 0.04);
+        color: hsl(var(--muted));
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+      }
+
+      .lead {
+        margin: 14px 0 22px;
+        color: hsl(var(--muted));
+        font-size: 16px;
+        line-height: 1.65;
+        max-width: 55ch;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 16px;
+        border-radius: 14px;
+        border: 1px solid hsl(var(--border));
+        background: hsl(var(--text) / 0.06);
+        color: hsl(var(--text));
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+      }
+
+      .btn:hover { transform: translateY(-1px); background: hsl(var(--text) / 0.09); }
+
+      .btn.primary {
+        background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent2)));
+        border-color: transparent;
+        box-shadow: 0 18px 48px hsl(var(--accent) / 0.18);
+        color: hsl(0 0% 10%);
+      }
+
+      .btn.primary:hover { transform: translateY(-1px); filter: brightness(1.03); }
+
+      .panel {
+        border-radius: 18px;
+        border: 1px solid hsl(var(--border));
+        background: hsl(var(--text) / 0.04);
+        padding: 18px;
+      }
+
+      .stat {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .stat .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid hsl(var(--border));
+        background: hsl(var(--bg) / 0.25);
+      }
+
+      .stat b { font-size: 18px; }
+      .stat span { color: hsl(var(--muted)); font-size: 13px; }
+
+      footer {
+        margin-top: 22px;
+        color: hsl(var(--muted));
+        font-size: 13px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding: 14px 4px 0;
+      }
+
+      @media (max-width: 860px) {
+        nav { display: none; }
+        .grid { grid-template-columns: 1fr; padding: 26px; }
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AutoGear Pro",
+        "url": "./",
+        "description": "Premium car equipment and accessories designed to fit most private cars.",
+        "inLanguage": "en"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a class="brand" href="./" aria-label="AutoGear Pro home">
+          <div class="badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.5 14.5l1.4-4.2c.4-1.2 1.6-2 2.9-2h8.4c1.3 0 2.5.8 2.9 2l1.4 4.2" stroke="hsl(0 0% 12%)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6.3 14.5h11.4" stroke="hsl(0 0% 12%)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7.2 18.2a1.7 1.7 0 110-3.4 1.7 1.7 0 010 3.4zm9.6 0a1.7 1.7 0 110-3.4 1.7 1.7 0 010 3.4z" fill="hsl(0 0% 12%)"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size: 16px;">AutoGear Pro</div>
+            <div style="font-size: 12px; color: hsl(var(--muted)); margin-top: 2px;">Static GitHub Pages build</div>
+          </div>
+        </a>
+
+        <nav aria-label="Primary">
+          <a href="#categories">Categories</a>
+          <a href="#features">Features</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-label="Premium car equipment">
+          <div class="grid">
+            <article>
+              <div class="kicker">Premium Car Equipment • Universal Fit</div>
+              <h1>Upgrade Your Ride with Premium Gear</h1>
+              <p class="lead">
+                This page is a <strong>pure HTML</strong> GitHub Pages entry to avoid ES module / MIME type issues.
+                Your full React app still works inside Lovable.
+              </p>
+
+              <div class="actions">
+                <a class="btn primary" href="#categories">Browse categories</a>
+                <a class="btn" href="#features">See features</a>
+              </div>
+            </article>
+
+            <aside class="panel" aria-label="Highlights">
+              <div class="stat">
+                <div class="row"><b>Fast</b><span>No build needed</span></div>
+                <div class="row"><b>Stable</b><span>No /src/main.tsx request</span></div>
+                <div class="row"><b>Clean</b><span>No MIME type errors</span></div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="categories" style="margin-top: 22px;" aria-label="Categories">
+          <div class="panel">
+            <h2 style="margin: 0 0 10px; font-size: 18px;">Popular categories</h2>
+            <p style="margin: 0; color: hsl(var(--muted)); line-height: 1.6;">
+              Interior care • Phone mounts • Dash cams • LED lighting • Emergency kits
+            </p>
+          </div>
+        </section>
+
+        <section id="features" style="margin-top: 14px;" aria-label="Features">
+          <div class="panel">
+            <h2 style="margin: 0 0 10px; font-size: 18px;">Why this fixes your console 404</h2>
+            <p style="margin: 0; color: hsl(var(--muted)); line-height: 1.6;">
+              GitHub Pages was trying to load <code>/src/main.tsx</code> (which doesn’t exist in a static deployment).
+              This standalone HTML page doesn’t reference TypeScript modules, so the 404 disappears.
+            </p>
+          </div>
+        </section>
+
+        <section id="contact" style="margin-top: 14px;" aria-label="Contact">
+          <div class="panel">
+            <h2 style="margin: 0 0 10px; font-size: 18px;">Contact</h2>
+            <p style="margin: 0; color: hsl(var(--muted)); line-height: 1.6;">
+              Email: support@autogear.pro (placeholder) • Hours: Mon–Fri
+            </p>
+          </div>
+        </section>
+
+        <footer>
+          <div>© <span id="y"></span> AutoGear Pro</div>
+          <div>Tip: set GitHub Pages source to <b>docs/</b>.</div>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
